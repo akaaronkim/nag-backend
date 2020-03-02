@@ -13,14 +13,14 @@ PaymentInfo.destroy_all
 User.destroy_all
 
 #User details
-user1 =  User.create(name: "girija", email: "girija@hotmail.com", address_one: "1460 mission st", address_two: "floor one", city: "San Francisco", state: "California", zipcode: "94016")
-user2 = User.create(name: "aaron",email: "aaron@gmail.com", address_one: "1460 mission street", address_two: "floor one", city: "San Francisco", state: "California", zipcode: "94106")
-user3 =  User.create(name: "nick", email: "nick@hotmail.com", address_one: "1460 mission st", address_two: "floor one", city: "San Francisco", state: "California", zipcode: "94016")
-user4 = User.create(name: "bronte",email: "bronte@gmail.com", address_one: "1460 mission street", address_two: "floor one", city: "San Francisco", state: "California", zipcode: "94106")
-user5 =  User.create(name: "jason", email: "jason@hotmail.com", address_one: "1460 mission st", address_two: "floor one", city: "San Francisco", state: "California", zipcode: "94016")
-user6 = User.create(name: "amelie",email: "amelie@gmail.com", address_one: "1460 mission street", address_two: "floor one", city: "San Francisco", state: "California", zipcode: "94106")
-user7 =  User.create(name: "donny", email: "donny@hotmail.com", address_one: "1460 mission st", address_two: "floor one", city: "San Francisco", state: "California", zipcode: "94016")
-user8 = User.create(name: "david",email: "david@gmail.com", address_one: "1460 mission street", address_two: "floor one", city: "San Francisco", state: "California", zipcode: "94106")
+user1 =  User.create(name: "girija", email: "girija@hotmail.com", address_one: "1460 mission st", address_two: "floor one", city: "San Francisco", state: "California", zipcode: "94016", password: "password")
+user2 = User.create(name: "aaron",email: "aaron@gmail.com", address_one: "1460 mission street", address_two: "floor one", city: "San Francisco", state: "California", zipcode: "94106",password: "password")
+user3 =  User.create(name: "nick", email: "nick@hotmail.com", address_one: "1460 mission st", address_two: "floor one", city: "San Francisco", state: "California", zipcode: "94016",password: "password")
+user4 = User.create(name: "bronte",email: "bronte@gmail.com", address_one: "1460 mission street", address_two: "floor one", city: "San Francisco", state: "California", zipcode: "94106",password: "password")
+user5 =  User.create(name: "jason", email: "jason@hotmail.com", address_one: "1460 mission st", address_two: "floor one", city: "San Francisco", state: "California", zipcode: "94016",password: "password")
+user6 = User.create(name: "amelie",email: "amelie@gmail.com", address_one: "1460 mission street", address_two: "floor one", city: "San Francisco", state: "California", zipcode: "94106",password: "password")
+user7 =  User.create(name: "donny", email: "donny@hotmail.com", address_one: "1460 mission st", address_two: "floor one", city: "San Francisco", state: "California", zipcode: "94016",password: "password")
+user8 = User.create(name: "david",email: "david@gmail.com", address_one: "1460 mission street", address_two: "floor one", city: "San Francisco", state: "California", zipcode: "94106",password: "password")
 
 #Payment details
 p1 = PaymentInfo.create(card_grid1: 4833, card_grid2: 1600, card_grid3: 3368, card_grid4: 2222, first_name: "aaron", last_name: "kim", expiration_date: "2022-12-31", cvv: 248, card_type: "visa", user:user1  )
