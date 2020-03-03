@@ -12,11 +12,9 @@ class UserController < ApplicationController
 
 #Create a new user
     def create
-        user = User.(name: , email: , address_one: , address_two: , city: , state: , zipcode: , password: )
+        user = User.new(name: params[:name], email: params[:email], address_one:params[:address_one] , address_two: params[:address_two], city: params[:city], state: params[:state], zipcode: params[:zipcode], password: params[:password])
         if user.save
-            byebug #=> Check for params
-            payment_info = PaymentInfo.create(card_grid1: , card_grid2: , card_grid3: , card_grid4: , first_name: , last_name: , expiration_date: , cvv: , card_type: , user:user  )
-            #call for check
+            my_token = issue_token(user)
             render json: {id: user.id, username: user.name, token: my_token}
         else
             render json: {error: 'The user could not be created'}, status: 401
