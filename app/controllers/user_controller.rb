@@ -21,11 +21,25 @@ class UserController < ApplicationController
         end
     end
 
+    def show_user
+        current_user = User.find(params[:id])
+        
+        render json: { id: current_user.id, username: current_user.name }
+        if logged_in?
+            render json: { id: current_user.id, username: current_user.name }
+        #   else
+        #     render json: {error: 'No user could be found'}, status: 401
+          end
+    end
+    
+
 #Lists the orders made by the user
-    def show
+    def show_orders
         #Check for token
         user = User.find_by(name:params[:username])
         user_orders = Order.all.select{|order| order.user_id === user.id}
         render json: {user_orders:user_orders}
     end
 end
+
+

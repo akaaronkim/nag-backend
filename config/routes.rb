@@ -7,5 +7,9 @@ Rails.application.routes.draw do
 
   get '/orders', to: 'order#index'       #Show all the orders placed so far
   get '/order/:id', to: 'order#show'     #Show specific order
-  get 'user/:id/:orders', to: 'user#show'#Lists the orders made by the user
+  get '/user/:id/:orders', to: 'user#show_orders'  #Lists the orders made by the user
+  get '/user/:id', to: 'user#show_user'
+
+
+
 end
