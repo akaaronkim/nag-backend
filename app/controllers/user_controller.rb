@@ -21,18 +21,16 @@ class UserController < ApplicationController
         end
     end
 
+# Show a particular user
     def show_user
-        current_user = User.find(params[:id])
-        
-        render json: { id: current_user.id, username: current_user.name }
         if logged_in?
-            render json: { id: current_user.id, username: current_user.name }
-        #   else
-        #     render json: {error: 'No user could be found'}, status: 401
-          end
+            cards = PaymentInfo.all.select{|card| card.user_id === current_user.id}
+            render json: {user_details: current_user, cards:cards}
+        else
+            render json: {error: 'No user could be found'}, status: 401
+        end
     end
     
-
 #Lists the orders made by the user
     def show_orders
         #Check for token
