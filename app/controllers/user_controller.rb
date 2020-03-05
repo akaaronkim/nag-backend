@@ -25,7 +25,8 @@ class UserController < ApplicationController
     def show_user
         if logged_in?
             cards = PaymentInfo.all.select{|card| card.user_id === current_user.id}
-            render json: {user_details: current_user, cards:cards}
+            orders = Order.all.select{|order| order.user_id === current_user.id}
+            render json: {user_details: current_user, cards:cards, orders:orders}
         else
             render json: {error: 'No user could be found'}, status: 401
         end
